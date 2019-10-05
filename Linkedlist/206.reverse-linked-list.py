@@ -41,4 +41,16 @@
 class Solution:
     def reverseList(self, head: ListNode) -> ListNode:
         
+        prevnode=None
+        curnode=head
+        
+        while(curnode!=None):
+            temp=curnode.next
+            curnode.next=prevnode
+            prevnode=curnode
+            curnode=temp
+        print(curnode,prevnode)
+        #None ListNode{val: 5, next: ListNode{val: 4, next: ListNode{val: 3, next: ListNode{val: 2, next: ListNode{val: 1, next: None}}}}}
+        
 
+        return prevnode
